@@ -1,0 +1,26 @@
+management:
+  security:
+    enabled: false
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+---
+spring:
+  profiles: dev
+server:
+  port: 8000
+---
+spring:
+  profiles: prod
+server:
+  ssl:
+    key-store: classpath:keystore.jks
+    key-store-password: vijaymysore
+    key-alias: vmysore
+    key-store-type: jks
+    key-password: vijaymysore
+  port: 9000
